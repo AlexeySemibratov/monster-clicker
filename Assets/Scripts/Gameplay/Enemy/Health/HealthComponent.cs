@@ -12,6 +12,7 @@ public class HealthComponent : MonoBehaviour
 
     public int MaxHP { get => _maxHP; }
 
+
     private const int BaseHPAmount = 50;
     private const int LevelHPMultiplier = 20;
 
