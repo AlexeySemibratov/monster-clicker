@@ -30,7 +30,6 @@ public class LooseDialogPresenter : MonoBehaviour
     private void HandleRewardedAdResult(RewardedAdResult result)
     {
         _adDisposable.Clear();
-        Debug.Log($"Handle ad result {result}");
 
         if (result == RewardedAdResult.UserRewarded)
         {
@@ -46,7 +45,6 @@ public class LooseDialogPresenter : MonoBehaviour
 
     private void OnDestroy()
     {
-        Debug.Log("Dispose ad request");
         _adDisposable.Dispose();
     }
 }
