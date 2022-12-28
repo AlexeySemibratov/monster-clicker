@@ -9,7 +9,6 @@ public class MonsterClickerApp : MonoBehaviour
     {
         if (Instance == null)
         {
-            Debug.Log("App instance created");
             Instance = this;
             DontDestroyOnLoad(this);
             InitializeAds();
@@ -22,6 +21,6 @@ public class MonsterClickerApp : MonoBehaviour
 
     private void InitializeAds()
     {
-        MobileAds.Initialize(_ => { Debug.Log("Ads initialized"); });
+        MobileAds.Initialize(_ => { });
     }
 }
