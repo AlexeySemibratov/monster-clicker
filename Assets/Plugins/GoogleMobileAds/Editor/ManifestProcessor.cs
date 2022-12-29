@@ -35,7 +35,7 @@ public class ManifestProcessor : IPreprocessBuild
     private const string MANIFEST_RELATIVE_PATH =
             "Plugins/Android/GoogleMobileAdsPlugin.androidlib/AndroidManifest.xml";
 
-    private const string METADATA_APPLICATION_ID  =
+    private const string METADATA_APPLICATION_ID =
             "com.google.android.gms.ads.APPLICATION_ID";
 
     private const string METADATA_DELAY_APP_MEASUREMENT_INIT =
@@ -69,9 +69,9 @@ public class ManifestProcessor : IPreprocessBuild
         {
             manifest = XDocument.Load(manifestPath);
         }
-        #pragma warning disable 0168
+#pragma warning disable 0168
         catch (IOException e)
-        #pragma warning restore 0168
+#pragma warning restore 0168
         {
             StopBuildWithMessage("AndroidManifest.xml is missing. Try re-importing the plugin.");
         }
@@ -98,7 +98,7 @@ public class ManifestProcessor : IPreprocessBuild
         }
 
         IEnumerable<XElement> metas = elemApplication.Descendants()
-                .Where( elem => elem.Name.LocalName.Equals("meta-data"));
+                .Where(elem => elem.Name.LocalName.Equals("meta-data"));
 
         SetMetadataElement(elemApplication,
                            metas,
@@ -207,11 +207,11 @@ public class ManifestProcessor : IPreprocessBuild
     private void StopBuildWithMessage(string message)
     {
         string prefix = "[GoogleMobileAds] ";
-    #if UNITY_2017_1_OR_NEWER
+#if UNITY_2017_1_OR_NEWER
         throw new BuildPlayerWindow.BuildMethodException(prefix + message);
-    #else
+#else
         throw new OperationCanceledException(prefix + message);
-    #endif
+#endif
     }
 }
 #endif

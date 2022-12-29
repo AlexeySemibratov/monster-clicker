@@ -92,6 +92,6 @@ public class WinDialogPresenter : MonoBehaviour
             result.AppendLine(string.Format(LeaderboardItemText, i + 1, item.name, item.score));
         }
 
-        return result.ToString();   
+        return result.ToString();
     }
 }

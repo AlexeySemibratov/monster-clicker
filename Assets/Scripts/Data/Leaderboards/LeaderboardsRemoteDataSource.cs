@@ -4,7 +4,7 @@ using UniRx;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class LoadLeaderboardsFromRemote
+public class LeaderboardsRemoteDataSource
 {
     private const string URL = "https://taptics.b-cdn.net/files/leaderboard.json";
 

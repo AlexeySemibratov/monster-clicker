@@ -5,7 +5,7 @@ using UniRx;
 
 public class LeaderboardsRepository
 {
-    private LoadLeaderboardsFromRemote _loadFromRemote = new();
+    private LeaderboardsRemoteDataSource _loadFromRemote = new();
 
     private List<LeaderboardItem> _localItems = new List<LeaderboardItem>();
 
