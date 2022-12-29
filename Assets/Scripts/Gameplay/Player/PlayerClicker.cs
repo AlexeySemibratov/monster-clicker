@@ -56,7 +56,7 @@ public class PlayerClicker : MonoBehaviour
             return;
 
         if (target.collider.TryGetComponent(out Enemy enemy))
-        {   
+        {
             enemy.Hit(_damagePerClick);
         }
     }

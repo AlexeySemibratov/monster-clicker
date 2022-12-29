@@ -15,7 +15,7 @@ public class RewarderAdShower : MonoBehaviour
         CreateRewardedAd();
 
         AdRequest request = new AdRequest.Builder().Build();
-       
+
         _rewardedAd.LoadAd(request);
 
         return _resultSubject;
@@ -43,7 +43,7 @@ public class RewarderAdShower : MonoBehaviour
         _rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
     }
 
-    public void HandleRewardedAdLoaded(object sender, EventArgs args)
+    private void HandleRewardedAdLoaded(object sender, EventArgs args)
     {
         if (_rewardedAd != null)
         {
@@ -51,17 +51,17 @@ public class RewarderAdShower : MonoBehaviour
         }
     }
 
-    public void HandleRewardedAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    private void HandleRewardedAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
         _resultSubject.OnNext(RewardedAdResult.Error);
     }
 
-    public void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args)
+    private void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args)
     {
         _resultSubject.OnNext(RewardedAdResult.Error);
     }
 
-    public void HandleUserEarnedReward(object sender, Reward args)
+    private void HandleUserEarnedReward(object sender, Reward args)
     {
         _resultSubject.OnNext(RewardedAdResult.UserRewarded);
     }

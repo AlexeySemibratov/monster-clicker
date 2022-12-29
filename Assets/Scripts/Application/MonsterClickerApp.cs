@@ -12,7 +12,7 @@ public class MonsterClickerApp : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(this);
             InitializeAds();
-        } 
+        }
         else
         {
             Destroy(gameObject);
